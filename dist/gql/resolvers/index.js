@@ -18,4 +18,10 @@ export const resolvers = {
             return result;
         },
     },
+    Category: {
+        product: (parent, args, context) => {
+            const result = db.products.filter((product) => product.categoryId === parent.id);
+            return result;
+        },
+    },
 };
