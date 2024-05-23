@@ -20,6 +20,13 @@ export const resolvers = {
       );
       return result;
     },
+    reviews: (parent, args, context) => {
+      console.log(parent);
+      const result = db.reviews.filter(
+        (review) => review.productId === parent.id
+      );
+      return result;
+    },
   },
   Category: {
     product: (parent, args, context) => {
